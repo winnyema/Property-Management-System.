@@ -1,35 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/bootsttap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Admin Dashboard</h1>
-    <h2>Properties</h2>
-    <ul>
-       {% for property in properties %}
-   {{ property.name }} - {{ property.address }}
-   {% endfor %} 
-    </ul>
-    
-    <h2>Tenants</h2>
-    <ul>
-     {% for tenant in tenants %}
-   {{ tenant.name }} - {{ tenant.email }}
-   {% endfor %}  
-    </ul>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Properties</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Admin Dashboard</h2>
 
-    <h2>Leases</h2>
-    <ul>
-     {% for lease in leases %}
-    {{ lease.property }} - {{ lease.tenant }}
-    {% endfor %}   
-    </ul>
-    <h2>Units</h2>
-  <ul>
-   {% for unit in units %}
-  {{ unit.property }} - {{ unit.tenant }}
-  {% endfor %}     
-  </ul>
+        <!-- Metrics Section -->
+        <div class="metrics">
+            <div class="metric">
+                <h3>Total Properties</h3>
+                <p>15</p>
+            </div>
+            <div class="metric">
+                <h3>Total Tenants</h3>
+                <p>45</p>
+            </div>
+            <div class="metric">
+                <h3>Total Leases</h3>
+                <p>30</p>
+            </div>
+        </div>
+
+        <!-- Properties Section -->
+        <h3>Properties</h3>
+        <ul class="property-list">
+            <li>Rubangura</li>
+            <li>MAKUZA PEACE PLAZA</li>
+            <li>CHICK</li>
+            <li>UBUMWE</li>
+            <li>MUTANGANA</li>
+        </ul>
+
+
+        <h3>Tenants</h3>
+        <ul class="tenant-list">
+            <li> KABAHIZI J.cloude</li>
+            <li>rukundo damasen</li>
+            <li>karinijabo adlphe</li>
+            <li> mazimpaka</li>
+            <li>karimunda</li>
+        </ul>
+
+        <!-- Leases Section -->
+        <h3>Leases</h3>
+        <ul class="lease-list">
+            <li>RUBANGURA - KABAHIZI J.cloude</li>
+            <li>MAKUZA PEACE PLAZA- rukundo damasen</li>
+            <li>CHICK - karinijabo adlphe</li>
+            <li>UBUMWE  - mazimpaka</li>
+            <li>MUTANGANA HOUSE - karimunda</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Property Management Admin</p>
+    </footer>
 </body>
 </html>
