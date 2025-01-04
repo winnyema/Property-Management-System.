@@ -2,14 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Property Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
-<!-- login.html -->
-    <h1>Login</h1>
-    <form method="post">
-        <button type="submit">Login</button>
-    </form>
-
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'property_list' %}">Properties</a></li>
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Property Management App</p>
+    </footer>
 </body>
 </html>
+CXDSZAQ
